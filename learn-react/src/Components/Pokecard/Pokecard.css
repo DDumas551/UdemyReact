@@ -1,4 +1,16 @@
 .Pokecard {
-  border: 2px solid mediumseagreen;
-  margin: auto;
+  box-shadow: 3px 4px 11px 2px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 180px;
+  padding-left: 7px;
+  padding-right: 7px;
+  margin: 10px;
+}
+
+.Pokecard img:hover {
+  transform: scale(1.2);
+}
+
+.Pokecard img {
+  transition: ease all 250ms;
 }

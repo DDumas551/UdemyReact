@@ -7,12 +7,12 @@ const Poke_API =
 class Pokecard extends Component {
   render() {
     let imgSrc = `${Poke_API}${this.props.id}.png`;
-    const { name, type, exp, pokeNumber } = this.props;
+    const { name, pokeNumber } = this.props;
     return (
       <div className="Pokecard">
         <span>
           <h1>{name}</h1>
-          <h1>{pokeNumber}</h1>
+          <h4>{pokeNumber}</h4>
           <img src={imgSrc} className="randompokemon" alt={name} />
         </span>
       </div>

@@ -7,7 +7,7 @@ class Pokedex extends Component {
   render() {
     const allPokemon = pokemon.all();
     return (
-      <div>
+      <div className="pokedex">
         {allPokemon.map((poke) => (
           <Pokecard
             name={poke}

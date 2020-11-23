@@ -3,3 +3,40 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+
+.container {
+  width: 75%;
+  margin: auto;
+}
+
+.App {
+  text-align: center;
+}
+
+.rollDice-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.die {
+  margin: 30px;
+  font-size: 10em;
+  color: slateblue;
+}
+
+.rollBtn {
+  align-self: flex-end;
+  width: 100vw;
+}
+
+.rollButton {
+  border: 1px solid grey;
+  width: 200px;
+  height: 70px;
+  vertical-align: baseline;
+  margin: auto;
+  font-size: 25px;
+  color: blue;
+  border-radius: 7px;
+}
