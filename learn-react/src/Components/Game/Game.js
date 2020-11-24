@@ -9,7 +9,7 @@ class Game extends Component {
     };
   }
   plusOne() {
-    this.setState({ score: (this.state.score += 1) });
+    this.setState((st) => ({ score: (st.score += 1) }));
   }
   render() {
     const { score } = this.state;

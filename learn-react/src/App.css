@@ -40,3 +40,9 @@
   color: blue;
   border-radius: 7px;
 }
+
+.ColorBoxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
