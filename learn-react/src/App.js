@@ -7,6 +7,7 @@ import Rando from "./Components/Game/Rando";
 import OnClickPractice from "./Components/Game/OnClickPractice";
 import RollDice from "./Components/Game/Dice/RollDice";
 import ScoreKeeper from "./Components/ReactStatePatterns/ScoreKeeper";
+import MutableDataStructures from "./Components/ReactStatePatterns/MutatingStateTheSafeWay/MutableDataStructures";
 import "../src/font-awesome-4.7.0/css/font-awesome.css";
 
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
         </div>
         <div className="rollDice-container">{/* <RollDice /> */}</div>
         {/* <ScoreKeeper /> */}
+        {/* <MutableDataStructures /> */}
       </div>
     );
   }

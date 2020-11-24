@@ -1,13 +1,42 @@
 import React, { Component } from "react";
 
 export default class MutableDataStructures extends Component {
+  static defaultProps = {
+    options: [
+      "angry",
+      "anchor",
+      "archive",
+      "at",
+      "archway",
+      "baby",
+      "bell",
+      "bolt",
+      "bone",
+      "car",
+      "city",
+      "cloud",
+      "couch",
+    ],
+  };
   constructor(props) {
     super(props);
     this.state = {
-      one: "one",
+      icons: [],
     };
+    this.addIcon = this.addIcon.bind(this);
+  }
+  addIcon() {
+    let idx = Math.floor(Math.random() * this.props.options.length);
+    let newIcon = this.props.options[idx];
+    this.setState({ icons: [...this.state.icons, newIcon] });
   }
   render() {
-    return <div></div>;
+    const icons = this.state.icons.map((i) => <i className={`fas fa-${i}`} />);
+    return (
+      <div>
+        <h1>Icons: {icons}</h1>
+        <button onClick={() => this.addIcon()}>Add Icon</button>
+      </div>
+    );
   }
 }
