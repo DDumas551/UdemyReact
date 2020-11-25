@@ -11,6 +11,9 @@ import MutableDataStructures from "./Components/ReactStatePatterns/MutatingState
 import LotteryHome from "./Components/ReactStatePatterns/Lotto/LotteryHome";
 import CoinFlip from "./Components/ReactStatePatterns/StateExercises/CoinFlip";
 import ColorBoxes from "./Components/ReactStatePatterns/StateExercises/ColorBoxes";
+import BindingWithArgs from "./Components/Section10/BindingWithArgs";
+import NumberList from "./Components/Section10/NumberList";
+import BetterNumberList from "./Components/Section10/BetterNumberList";
 import "../src/font-awesome-4.7.0/css/font-awesome.css";
 
 class App extends Component {
@@ -29,7 +32,11 @@ class App extends Component {
         {/* <LotteryHome /> */}
         {/* <LotteryHome title="Mini Daily" maxNum={10} maxBalls={4} /> */}
         {/* <CoinFlip /> */}
-        <ColorBoxes />
+        {/* <ColorBoxes /> */}
+        {/* <BindingWithArgs /> */}
+        {/* <NumberList /> */}
+        {/* <hr /> */}
+        {/* <BetterNumberList/> */}
       </div>
     );
   }
