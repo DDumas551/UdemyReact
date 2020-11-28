@@ -14,6 +14,8 @@ import ColorBoxes from "./Components/ReactStatePatterns/StateExercises/ColorBoxe
 import BindingWithArgs from "./Components/Section10/BindingWithArgs";
 import NumberList from "./Components/Section10/NumberList";
 import BetterNumberList from "./Components/Section10/BetterNumberList";
+import Form from "./Components/Section13/Form";
+import ShoppingList from "./Components/Section13/ShoppingList/ShoppingList";
 import "../src/font-awesome-4.7.0/css/font-awesome.css";
 
 class App extends Component {
@@ -37,6 +39,8 @@ class App extends Component {
         {/* <NumberList /> */}
         {/* <hr /> */}
         {/* <BetterNumberList/> */}
+        {/* <Form /> */}
+        <ShoppingList />
       </div>
     );
   }
