@@ -16,6 +16,7 @@ import NumberList from "./Components/Section10/NumberList";
 import BetterNumberList from "./Components/Section10/BetterNumberList";
 import Form from "./Components/Section13/Form";
 import ShoppingList from "./Components/Section13/ShoppingList/ShoppingList";
+import ColorBoxesList from "./Components/Section14/ColorBoxes";
 import "../src/font-awesome-4.7.0/css/font-awesome.css";
 
 class App extends Component {
@@ -40,7 +41,8 @@ class App extends Component {
         {/* <hr /> */}
         {/* <BetterNumberList/> */}
         {/* <Form /> */}
-        <ShoppingList />
+        {/* <ShoppingList /> */}
+        <ColorBoxesList />
       </div>
     );
   }
