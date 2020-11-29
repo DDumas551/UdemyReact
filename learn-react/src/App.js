@@ -17,12 +17,13 @@ import BetterNumberList from "./Components/Section10/BetterNumberList";
 import Form from "./Components/Section13/Form";
 import ShoppingList from "./Components/Section13/ShoppingList/ShoppingList";
 import ColorBoxesList from "./Components/Section14/ColorBoxes";
+import TodoList from "./Components/Section15/ToDoList";
 import "../src/font-awesome-4.7.0/css/font-awesome.css";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="pp">
         <div className="container">
           {/* <Pokedex /> */}
           {/* <Game /> */}
@@ -42,7 +43,8 @@ class App extends Component {
         {/* <BetterNumberList/> */}
         {/* <Form /> */}
         {/* <ShoppingList /> */}
-        <ColorBoxesList />
+        {/* <ColorBoxesList /> */}
+        <TodoList />
       </div>
     );
   }
