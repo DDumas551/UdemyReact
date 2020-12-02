@@ -1,0 +1,14 @@
+.Navbar {
+  display: flex;
+}
+
+.navbar-active {
+  background-color: transparent;
+}
+
+.navbar-link {
+  justify-content: space-between;
+  margin: auto;
+  text-decoration: none;
+  text-decoration-color: none;
+}
