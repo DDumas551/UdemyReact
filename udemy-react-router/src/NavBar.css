@@ -4,6 +4,7 @@
 
 .navbar-active {
   background-color: transparent;
+  font-weight: 200;
 }
 
 .navbar-link {
