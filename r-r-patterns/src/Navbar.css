@@ -1,6 +1,10 @@
-.Navbar {
+/* .Navbar {
   display: flex;
   justify-content: flex-end;
   background: darkslategray;
   padding: 1rem;
+} */
+
+.navLink-text {
+  transition-duration: 0.25s;
 }
