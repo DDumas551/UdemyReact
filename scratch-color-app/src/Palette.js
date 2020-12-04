@@ -22,7 +22,7 @@ export default class Palette extends Component {
   }
   snackBar() {
     setTimeout(() => {
-    this.setState({ snackBar: true });
+      this.setState({ snackBar: true });
     }, 2000);
     setTimeout(() => {
       this.setState({ snackBar: false });
@@ -30,7 +30,7 @@ export default class Palette extends Component {
   }
   render() {
     const { level, format, snackBar } = this.state;
-    const { colors } = this.props.palette;
+    const { colors, paletteName, emoji } = this.props.palette;
     const colorBoxes = colors[level].map((color) => (
       <ColorBox
         key={color.name}
@@ -48,7 +48,10 @@ export default class Palette extends Component {
           snackBar={snackBar}
         />
         <div className="Palette-colors">{colorBoxes}</div>
-        {/* footer */}
+        <footer className="Palette-footer">
+          {paletteName}
+          <span>{emoji}</span>
+        </footer>
       </div>
     );
   }

@@ -1,6 +1,8 @@
 .Palette {
   height: 100vh;
-  width: 98vw;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
 }
 .Palette-colors {
   height: 90%;
@@ -32,4 +34,14 @@
 
 .rc-slider-rail {
   height: 8px;
+}
+
+.Palette-footer {
+  background-color: white;
+  height: 5vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: bold;
+  margin-right: 1rem;
 }
