@@ -12,18 +12,23 @@ import "./NavBar.css";
 export default class NavBar extends Component {
   constructor(props) {
     super(props);
-    this.state = { format: "hex" };
+    this.state = { format: "hex", type: false };
     this.handleChange = this.handleChange.bind(this);
+    this.handleSnackBar = this.handleSnackBar.bind(this);
   }
 
   handleChange(e) {
     this.setState({ format: e.target.value });
     this.props.handleChange(e.target.value);
   }
+  handleSnackBar() {
+    this.setState({ type: true });
+    setTimeout(() => this.setState({ type: false }), 3500);
+  }
   render() {
-    console.log(this.props.snackBar);
+    // console.log(this.props.snackBar);
     const { level, changeLevel, snackBar } = this.props;
-    const { format } = this.state;
+    const { format, type } = this.state;
     return (
       <header className="NavBar">
         <div className="logo">
@@ -43,11 +48,30 @@ export default class NavBar extends Component {
         </div>
         <div className="select-container">
           <Select value={format} onChange={this.handleChange}>
-            <MenuItem value="hex">HEX - #eeeeee</MenuItem>
-            <MenuItem value="rgb">RGB - rgb 255,255,255</MenuItem>
-            <MenuItem value="rgba">RGBa - rgb 255,255,255,1.0</MenuItem>
+            <MenuItem onClick={this.handleSnackBar} value="hex">
+              HEX - #eeeeee
+            </MenuItem>
+            <MenuItem onClick={this.handleSnackBar} value="rgb">
+              RGB - rgb 255,255,255
+            </MenuItem>
+            <MenuItem onClick={this.handleSnackBar} value="rgba">
+              RGBa - rgb 255,255,255,1.0
+            </MenuItem>
           </Select>
         </div>
+        <Snackbar
+          anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+          open={type}
+          message={
+            <span id="message-id">{this.state.format.toUpperCase()} </span>
+          }
+          ContentProps={{ "aria-describedby": "message-id" }}
+          action={[
+            <IconButton color="inherit" aria-label="close">
+              <CloseIcon />
+            </IconButton>,
+          ]}
+        ></Snackbar>
         <Snackbar
           anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
           open={snackBar}
