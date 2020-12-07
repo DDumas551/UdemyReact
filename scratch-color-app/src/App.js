@@ -13,7 +13,6 @@ class App extends Component {
     });
   }
   render() {
-    // console.log(generatePalette(seedColors[4]));
     return (
       <Switch>
         <Route
@@ -34,9 +33,10 @@ class App extends Component {
             />
           )}
         />
-        {/* <div className="App">
-          <Palette palette={generatePalette(seedColors[4])} />
-        </div> */}
+        <Route
+          path="/palette/:paletteId/:colorId"
+          render={() => <h1>SUP</h1>}
+        />
       </Switch>
     );
   }
