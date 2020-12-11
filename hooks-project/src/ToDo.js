@@ -1,52 +1,46 @@
-import React from "react";
-import useToggle from "./Hooks/useToggle";
-import EditToDoForm from "./EditToDoForm";
+import React, { useContext } from "react";
+import useToggleState from "./hooks/useToggleState";
+import EditTodoForm from "./EditTodoForm";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
+import ListItemText from "@material-ui/core/ListItem";
 import Checkbox from "@material-ui/core/Checkbox";
 import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
-
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
+import { TodosContext } from "./context/todos.context";
 
-export default function ToDo({
-  task,
-  id,
-  completed,
-  removeToDo,
-  editToDo,
-  toggleToDo,
-}) {
-  const [isEditing, toggle] = useToggle();
+function Todo({ id, task, completed }) {
+  const { removeTodo, toggleTodo } = useContext(TodosContext);
+  const [isEditing, toggle] = useToggleState(false);
   return (
-    <div>
-      <ListItem>
-        {isEditing ? (
-          <EditToDoForm id={id} task={task} editToDo={editToDo} toggle={toggle} />
-        ) : (
-          <>
-            <Checkbox
-              tabIndex={-1}
-              checked={completed}
-              onClick={() => toggleToDo(id)}
-            />
-            <ListItemText
-              style={{ textDecoration: completed ? "line-through" : "" }}
-            >
-              {task}
-            </ListItemText>
-            <ListItemSecondaryAction>
-              <IconButton>
-                <EditIcon aria-label="edit" onClick={toggle} />
-              </IconButton>
-              <IconButton onClick={() => removeToDo(id)}>
-                <DeleteIcon aria-label="delete" />
-              </IconButton>
-            </ListItemSecondaryAction>
-          </>
-        )}
-      </ListItem>
-    </div>
+    <ListItem style={{ height: "64px" }}>
+      {isEditing ? (
+        <EditTodoForm id={id} task={task} toggleEditForm={toggle} />
+      ) : (
+        <>
+          <Checkbox
+            tabIndex={-1}
+            checked={completed}
+            onClick={() => toggleTodo(id)}
+          />
+          <ListItemText
+            style={{ textDecoration: completed ? "line-through" : "none" }}
+          >
+            {task}
+          </ListItemText>
+          <ListItemSecondaryAction>
+            <IconButton aria-label='Delete' onClick={() => removeTodo(id)}>
+              <DeleteIcon />
+            </IconButton>
+            <IconButton aria-label='Edit' onClick={toggle}>
+              <EditIcon />
+            </IconButton>
+          </ListItemSecondaryAction>
+        </>
+      )}
+    </ListItem>
   );
 }
+
+export default Todo;
