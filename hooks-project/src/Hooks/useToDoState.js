@@ -1,29 +1,30 @@
 import { useState } from "react";
+import { useLocalStorageState } from "./useLocalStorageState";
 import uuid from "uuid/v4";
-
-
-export default (initialToDos) => {
-  const [todos, setToDos] = useState(initialToDos);
+export default initialTodos => {
+  const [todos, setTodos] = useLocalStorageState("todos", initialTodos);
   return {
     todos,
-    addToDo: (newToDoText) => {
-      setToDos([...todos, { id: uuid(), task: newToDoText, completed: false }]);
+    addTodo: newTodoText => {
+      setTodos([...todos, { id: uuid(), task: newTodoText, completed: false }]);
     },
-    removeToDo: (todoId) => {
-      const updatedToDos = todos.filter((todo) => todo.id !== todoId);
-      setToDos(updatedToDos);
+    removeTodo: todoId => {
+      //filter out removed todo
+      const updatedTodos = todos.filter(todo => todo.id !== todoId);
+      //call setTodos with new todos array
+      setTodos(updatedTodos);
     },
-    toggleToDo: (todoId) => {
-      const updatedToDos = todos.map((todo) =>
+    toggleTodo: todoId => {
+      const updatedTodos = todos.map(todo =>
         todo.id === todoId ? { ...todo, completed: !todo.completed } : todo
       );
-      setToDos(updatedToDos);
+      setTodos(updatedTodos);
     },
-    editToDo: (todoId, newTask) => {
-      const updatedToDos = todos.map((todo) =>
+    editTodo: (todoId, newTask) => {
+      const updatedTodos = todos.map(todo =>
         todo.id === todoId ? { ...todo, task: newTask } : todo
       );
-      setToDos(updatedToDos);
-    },
+      setTodos(updatedTodos);
+    }
   };
 };
