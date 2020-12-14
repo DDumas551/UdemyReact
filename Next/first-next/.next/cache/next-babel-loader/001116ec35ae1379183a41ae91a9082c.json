@@ -1,0 +1,1 @@
+{"ast":null,"code":"const Post = () => {\n  return;\n};","map":{"version":3,"sources":["C:/Users/david/Documents/FullProjects/UdemyNotes/React/UdemyReact/Next/first-next/pages/post.js"],"names":["Post"],"mappings":"AAAA,MAAMA,IAAI,GAAG,MAAM;AACf;AACH,CAFD","sourcesContent":["const Post = () => {\r\n    return\r\n}"]},"metadata":{},"sourceType":"script"}
